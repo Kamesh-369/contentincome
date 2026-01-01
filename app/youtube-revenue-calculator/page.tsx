@@ -9,9 +9,52 @@ export const metadata = {
     description: "Estimate YouTube earnings using views, CPM, niche, and audience location. Updated YouTube revenue calculator for 2026.",
 };
 
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What does this calculator do?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The YouTube Revenue Calculator estimates potential earnings based on key performance metrics. By inputting details such as video views, estimated CPM, content niche, and the location of your audience, the tool calculates approximate revenue figures. It serves as a valuable resource for both aspiring and established YouTubers to gauge financial possibilities."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is CPM in YouTube earnings?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CPM stands for \"Cost Per Mille,\" representing the amount advertisers pay per 1,000 monetized views. This figure fluctuates based on advertiser competition and budgets. Generally, a higher number of advertisers bidding for ad space on your videos drives the CPM up, resulting in greater earnings for the creator per thousand views."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do earnings vary by country?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Earnings vary significantly depending on viewer location. Countries with strong economies like the US, UK, and Canada typically command higher CPM rates because advertisers pay more to reach those audiences. In contrast, regions with lower purchasing power may see lower CPMs, though high view counts can still generate substantial income."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are these results guaranteed?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The figures provided are estimates, not guarantees. Actual YouTube earnings depend on complex real-world variables including ad fill rates, watch time, engagement, ad formats, seasonality, and adherence to YouTube’s monetization policies. This calculator provides a realistic baseline for planning, but individual results will vary."
+            }
+        }
+    ]
+};
+
 export default function YoutubeRevenueCalculator() {
     return (
         <main className="flex min-h-screen flex-col items-center bg-background pb-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             {/* The Revenue Calculator handles Channel Search + Auto-Estimation inside Hero/Results */}
             <HeroSection />
 
