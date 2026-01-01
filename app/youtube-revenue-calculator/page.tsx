@@ -48,12 +48,31 @@ const faqSchema = {
     ]
 };
 
+const webAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "name": "YouTube Revenue Calculator",
+    "description": "Estimates YouTube earnings based on views, CPM, niche, and audience location.",
+    "url": "https://www.youtuberearnings.in/youtube-revenue-calculator",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+};
+
 export default function YoutubeRevenueCalculator() {
     return (
         <main className="flex min-h-screen flex-col items-center bg-background pb-20">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
             />
             {/* The Revenue Calculator handles Channel Search + Auto-Estimation inside Hero/Results */}
             <HeroSection />
